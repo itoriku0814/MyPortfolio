@@ -1,0 +1,322 @@
+/* 基本設定と変数 */
+:root {
+    --primary-color: #2c3e50; /* 濃い青灰色 */
+    --secondary-color: #3498db; /* 明るい青 */
+    --background-color: #f8f9fa; /* 明るい灰色 */
+    --text-color: #34495e; /* やや濃い灰色 */
+    --white-color: #ffffff;
+    --section-padding: 80px 20px;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.section-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--section-padding);
+}
+
+/* ヘッダー */
+.header {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+}
+
+.header-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-list li a:hover {
+    color: var(--secondary-color);
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* ヒーローセクション */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--white-color);
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 共通セクションスタイル */
+.section-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-container h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Aboutセクション */
+.about-content, .works-content, .philosophy-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skills li {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Worksセクション */
+.works-image, .philosophy-image {
+    width: 45%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+.works-text, .philosophy-text {
+    width: 55%;
+}
+
+/* Experienceセクション */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.experience-card {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+}
+
+.experience-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.experience-card h4 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Contactセクション */
+#contact {
+    text-align: center;
+}
+
+.contact-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #2980b9; /* 少し濃い青 */
+    transform: translateY(-3px);
+}
+
+/* フッター */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* スクロールアニメーション */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* レスポンシブ対応 (スマートフォン) */
+@media (max-width: 768px) {
+    .section-container {
+        padding: 60px 20px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .nav-list.is-active {
+        display: flex;
+    }
+
+    .nav-list li {
+        width: 100%;
+    }
+
+    .nav-list li a {
+        display: block;
+        padding: 15px 0;
+        border-top: 1px solid #eee;
+    }
+
+    .burger-menu {
+        display: block;
+        z-index: 10;
+    }
+    .burger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin: 5px 0;
+        transition: all 0.3s;
+    }
+    .burger-menu.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .burger-menu.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .about-content, .works-content, .philosophy-content {
+        flex-direction: column;
+    }
+    
+    #philosophy-content {
+      flex-direction: column-reverse;
+    }
+
+    .works-image, .works-text, .philosophy-image, .philosophy-text {
+        width: 100%;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+}

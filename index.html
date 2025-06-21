@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="header-logo">My Portfolio</a>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="burger-menu" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-container">
+                <h1 class="hero-title">困難を乗り越え、技術で未来を創る。</h1>
+                <p class="hero-subtitle">
+                    逆境で培った粘り強さと、人の心に寄り添う力を武器に、<br>
+                    ユーザーに真の価値を届けるWebエンジニアを目指しています。
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="section-container animate-on-scroll">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>専修大学 ネットワーク情報学部</h3>
+                    <p>フィジカルコンピューティングプログラムに所属し、ハードウェアとソフトウェアの両面から情報技術を学んでいます。Radxa Rockを使った電子工作やPythonプログラミングから始まり、現在はDockerコンテナ技術、GitHub、Web APIといった分散情報システムに関する知識を深めています。</p>
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Docker</li>
+                            <li>GitHub</li>
+                            <li>Web API</li>
+                            <li>IoT (Radxa)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="section-container animate-on-scroll">
+            <h2>Works</h2>
+            <div class="works-content">
+                <img src="work.jpg" alt="スマホで貯金額を確認できる貯金箱" class="works-image">
+                <div class="works-text">
+                    <h3>スマホで貯金額を確認できる貯金箱</h3>
+                    <p>大学2年次の応用演習で製作した作品です。苦手だった「貯金」という行為を楽しい体験に変えたいという思いから開発しました。コインを投入するとLEDが光るインタラクティブな体験を提供しつつ、IoT技術を用いてスマートフォンからいつでも貯金額を確認できます。</p>
+                    <p>開発過程では多くの試行錯誤がありましたが、この経験を通じてマイコンプログラミングやIoT技術への理解を飛躍的に深めることができました。完成品は教授や学友からも高い評価を受け、課題解決の面白さと、ものづくりの達成感を強く実感した作品です。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-container animate-on-scroll">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <img src="experience.jpg" alt="塾講師のアルバイト風景" class="experience-image">
+                    <h4>塾講師: 粘り強さと伝える力</h4>
+                    <p>高校生の指導を担当し、生徒一人ひとりに合わせたコミュニケーションの重要性を学びました。成績が伸び悩む生徒にも粘り強く向き合い、共に成長できた経験は、困難な状況にも屈しない忍耐力を私に与えてくれました。</p>
+                </div>
+                <div class="experience-card">
+                    <h4>軽音楽部: チームで創る喜び</h4>
+                    <p>キーボード担当として、多様なメンバーと一つの音楽を創り上げる経験をしました。異なる音が重なりハーモニーが生まれた時の達成感は、チームで協力し、一つの目標を成し遂げることの素晴らしさを教えてくれました。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="philosophy" class="section-container animate-on-scroll">
+            <h2>My Philosophy</h2>
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h3>人の心に寄り添う力</h3>
+                    <p>私が最も大切にしている価値観は、相手が何を考え、何を感じているのかを丁寧に汲み取り、行動することです。この姿勢は、私の多様な趣味にも反映されています。</p>
+                    <p>旅行では現地の文化を尊重し、ピアノでは作曲者の想いを想像し、ゲームでは様々なコミュニティの価値観に触れてきました。これらの経験で培った「人の心に寄り添う力」を活かし、チームやお客様の真のニーズを理解し、思いやりを持ってプロダクト開発に貢献していきたいです。</p>
+                </div>
+                <img src="philosophy.jpg" alt="私の価値観" class="philosophy-image">
+            </div>
+        </section>
+
+        <section id="contact" class="section-container animate-on-scroll">
+            <h2>Contact</h2>
+            <p>ご興味を持っていただけましたら、ぜひお気軽にご連絡ください。<br>GitHubでは、ポートフォリオサイトのソースコードも公開しています。</p>
+            <div class="contact-links">
+                <a href="https://github.com/your-username" target="_blank" class="contact-btn">GitHub</a>
+                <a href="https://twitter.com/your-username" target="_blank" class="contact-btn">Twitter / X</a>
+                <a href="mailto:your-email@example.com" class="contact-btn">Email</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
