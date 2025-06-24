@@ -425,4 +425,11 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column-reverse;
     }
 
-    .philosophy-
+    .philosophy-image, .philosophy-text {
+        width: 100%;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+}
