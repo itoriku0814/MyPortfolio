@@ -10,6 +10,7 @@
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* 基本スタイル */
 body {
     font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
@@ -86,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
-/* ヒーローセクション: 背景画像スタイルに変更 */
+/* ヒーローセクション */
 #hero {
     display: flex;
     align-items: center;
@@ -94,15 +95,13 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     text-align: center;
     position: relative;
-    /* 用意した画像(hero-background.jpg)を背景に設定 */
     background-image: url('hero-background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--white-color); /* 文字色を白に */
+    color: var(--white-color);
 }
 
-/* ヒーローセクション: 背景画像の上に半透明のオーバーレイを追加 */
 #hero::before {
     content: '';
     position: absolute;
@@ -110,11 +109,10 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 黒の半透明 */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-/* ヒーローセクションのテキストがオーバーレイの上に表示されるように設定 */
 .hero-container {
     position: relative;
     z-index: 2;
@@ -123,17 +121,17 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: var(--white-color); /* 文字色を白に */
+    color: var(--white-color);
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
-    color: var(--white-color); /* 文字色を白に */
+    color: var(--white-color);
 }
 
-/* 共通セクションスタイル */
+/* 共通セクションタイトル */
 .section-container h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -152,10 +150,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Aboutセクション */
-.about-content, .philosophy-content {
+.about-content {
     display: flex;
     align-items: center;
     gap: 40px;
+}
+
+.about-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--box-shadow);
+    flex-shrink: 0;
+}
+
+.about-text {
+    width: 100%;
 }
 
 .skills ul {
@@ -176,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* Worksセクション: グリッドレイアウトに変更 */
+/* Worksセクション */
 .works-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -210,11 +221,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 .work-card p {
     margin: 0 20px 20px;
-    flex-grow: 1; /* カードの高さを揃えるため */
+    flex-grow: 1;
 }
 
 .work-links {
     margin: 0 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* ボタン間の余白 */
 }
 
 .work-link-btn {
@@ -230,7 +244,6 @@ h1, h2, h3, h4, h5, h6 {
 .work-link-btn:hover {
     background-color: var(--secondary-color);
 }
-
 
 /* Experienceセクション */
 .experience-grid {
@@ -266,6 +279,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Philosophyセクション */
+.philosophy-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
 .philosophy-image {
     width: 45%;
     border-radius: var(--border-radius);
@@ -324,7 +343,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0);
 }
 
-/* 機能追加: トップに戻るボタンのスタイル */
+/* トップに戻るボタン */
 .back-to-top-btn {
     position: fixed;
     bottom: 20px;
@@ -353,7 +372,6 @@ h1, h2, h3, h4, h5, h6 {
 .back-to-top-btn:hover {
     background-color: var(--secondary-color);
 }
-
 
 /* レスポンシブ対応 (スマートフォン) */
 @media (max-width: 768px) {
@@ -399,6 +417,7 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
         z-index: 10;
     }
+
     .burger-menu span {
         display: block;
         width: 25px;
@@ -407,6 +426,7 @@ h1, h2, h3, h4, h5, h6 {
         margin: 5px 0;
         transition: all 0.3s;
     }
+
     .burger-menu.is-active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -419,6 +439,12 @@ h1, h2, h3, h4, h5, h6 {
 
     .about-content, .philosophy-content {
         flex-direction: column;
+    }
+    
+    .about-image {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px;
     }
     
     .philosophy-content {
