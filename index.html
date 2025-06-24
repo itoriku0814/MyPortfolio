@@ -64,15 +64,33 @@
 
         <section id="works" class="section-container animate-on-scroll">
             <h2>Works</h2>
-            <div class="works-content">
-                <img src="work.jpg" alt="スマホで貯金額を確認できる貯金箱" class="works-image">
-                <div class="works-text">
-                    <h3>スマホで貯金額を確認できる貯金箱</h3>
-                    <p>大学2年次の応用演習で製作した作品です。苦手だった「貯金」という行為を楽しい体験に変えたいという思いから開発しました。コインを投入するとLEDが光るインタラクティブな体験を提供しつつ、IoT技術を用いてスマートフォンからいつでも貯金額を確認できます。</p>
-                    <p>開発過程では多くの試行錯誤がありましたが、この経験を通じてマイコンプログラミングやIoT技術への理解を飛躍的に深めることができました。完成品は教授や学友からも高い評価を受け、課題解決の面白さと、ものづくりの達成感を強く実感した作品です。</p>
+            <div class="works-grid">
+                <div class="work-card">
+                    <img src="work.jpg" alt="スマホで貯金額を確認できる貯金箱" class="work-image">
+                    <h4>スマホで貯金額を確認できる貯金箱</h4>
+                    <p>大学2年次の応用演習で製作。苦手だった「貯金」を楽しい体験に変えたいという思いから開発。コイン投入時のLED演出や、IoT技術による残高確認機能を実装しました。</p>
+                    <div class="work-links">
+                        <a href="https://www.youtube.com/watch?v=your-video-id" class="work-link-btn" target="_blank">制作動画を見る</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <img src="zoo.jpg" alt="紙で作る動物園" class="work-image">
+                    <h4>紙で作る動物園</h4>
+                    <p>応用演習の夏期課題で制作。工作用紙と画用紙でライオンとパンダを工作しました。ものづくりの面白さと難しさを実感し、後の電子工作にも活かすことができました。</p>
+                    <div class="work-links">
+                         <a href="https://www.youtube.com/watch?v=your-video-id" class="work-link-btn" target="_blank">動画を見る</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <img src="changer.jpg" alt="両替機" class="work-image">
+                    <h4>両替機</h4>
+                    <p>応用演習のグループワークで制作。50円玉を10円玉5枚に両替するマシンです。私は主にデザイン考案と装飾を担当し、個性的で使いやすい見た目を追求しました。</p>
                 </div>
             </div>
         </section>
+
 
         <section id="experience" class="section-container animate-on-scroll">
             <h2>Experience</h2>
@@ -84,7 +102,7 @@
                 </div>
                 <div class="experience-card">
                     <h4>軽音楽部: チームで創る喜び</h4>
-                    <p>キーボード担当として、多様なメンバーと音楽を創り上げる経験をしました。異なる音が重なりハーモニーが生まれた時の達成感は、チームで協力し、一つの目標を成し遂げることの素晴らしさを教えてくれました。</p>
+                    <p>キーボード担当として、多様なメンバーと一つの音楽を創り上げる経験をしました。異なる音が重なりハーモニーが生まれた時の達成感は、チームで協力し、一つの目標を成し遂げることの素晴らしさを教えてくれました。</p>
                 </div>
             </div>
         </section>
@@ -106,7 +124,6 @@
             <p>ご興味を持っていただけましたら、ぜひお気軽にご連絡ください。<br>GitHubでは、ポートフォリオサイトのソースコードも公開しています。</p>
             <div class="contact-links">
                 <a href="https://github.com/your-username" target="_blank" class="contact-btn">GitHub</a>
-                <a href="https://twitter.com/your-username" target="_blank" class="contact-btn">Twitter / X</a>
                 <a href="mailto:your-email@example.com" class="contact-btn">Email</a>
             </div>
         </section>
@@ -114,8 +131,11 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        <p>&copy; 2025 Riku Ito. All Rights Reserved.</p>
     </footer>
+    
+    <a href="#" id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">↑</a>
+
 
     <script src="script.js"></script>
 </body>

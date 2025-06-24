@@ -86,25 +86,51 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
-/* ヒーローセクション */
+/* ヒーローセクション: 背景画像スタイルに変更 */
 #hero {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     text-align: center;
-    background-color: var(--white-color);
+    position: relative;
+    /* 用意した画像(hero-background.jpg)を背景に設定 */
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white-color); /* 文字色を白に */
+}
+
+/* ヒーローセクション: 背景画像の上に半透明のオーバーレイを追加 */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 黒の半透明 */
+    z-index: 1;
+}
+
+/* ヒーローセクションのテキストがオーバーレイの上に表示されるように設定 */
+.hero-container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-title {
     font-size: 3rem;
     margin-bottom: 20px;
+    color: var(--white-color); /* 文字色を白に */
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
+    color: var(--white-color); /* 文字色を白に */
 }
 
 /* 共通セクションスタイル */
@@ -126,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Aboutセクション */
-.about-content, .works-content, .philosophy-content {
+.about-content, .philosophy-content {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -150,15 +176,61 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* Worksセクション */
-.works-image, .philosophy-image {
-    width: 45%;
+/* Worksセクション: グリッドレイアウトに変更 */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.work-card {
+    background-color: var(--white-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
 }
-.works-text, .philosophy-text {
-    width: 55%;
+.work-card:hover {
+    transform: translateY(-10px);
 }
+
+.work-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.work-card h4 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin: 20px 20px 10px;
+}
+.work-card p {
+    margin: 0 20px 20px;
+    flex-grow: 1; /* カードの高さを揃えるため */
+}
+
+.work-links {
+    margin: 0 20px 20px;
+}
+
+.work-link-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+.work-link-btn:hover {
+    background-color: var(--secondary-color);
+}
+
 
 /* Experienceセクション */
 .experience-grid {
@@ -193,6 +265,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
+/* Philosophyセクション */
+.philosophy-image {
+    width: 45%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+.philosophy-text {
+    width: 55%;
+}
+
 /* Contactセクション */
 #contact {
     text-align: center;
@@ -217,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-btn:hover {
-    background-color: #2980b9; /* 少し濃い青 */
+    background-color: #2980b9;
     transform: translateY(-3px);
 }
 
@@ -241,6 +323,37 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* 機能追加: トップに戻るボタンのスタイル */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+    z-index: 900;
+}
+
+.back-to-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--secondary-color);
+}
+
 
 /* レスポンシブ対応 (スマートフォン) */
 @media (max-width: 768px) {
@@ -304,19 +417,12 @@ h1, h2, h3, h4, h5, h6 {
         transform: rotate(-45deg) translate(7px, -6px);
     }
 
-    .about-content, .works-content, .philosophy-content {
+    .about-content, .philosophy-content {
         flex-direction: column;
     }
     
-    #philosophy-content {
-      flex-direction: column-reverse;
+    .philosophy-content {
+        flex-direction: column-reverse;
     }
 
-    .works-image, .works-text, .philosophy-image, .philosophy-text {
-        width: 100%;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-}
+    .philosophy-

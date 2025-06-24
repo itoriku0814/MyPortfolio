@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navList.classList.toggle('is-active');
     });
 
-    // メニュー項目クリックでメニューを閉じる
     navList.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             burgerMenu.classList.remove('is-active');
@@ -20,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2. スムーススクロール機能
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            // トップに戻るボタンは別の処理があるので除外
+            if (this.getAttribute('id') === 'back-to-top') return;
+
             e.preventDefault();
 
             const targetId = this.getAttribute('href');
@@ -47,11 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.1 // 要素が10%見えたら発火
+        threshold: 0.1
     });
 
     animatedElements.forEach(element => {
         observer.observe(element);
     });
 
+    // 4. 機能追加: トップに戻るボタンの機能
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    // スクロール量に応じてボタンの表示/非表示を切り替える
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // 300pxスクロールしたら表示
+            backToTopBtn.classList.add('is-visible');
+        } else {
+            backToTopBtn.classList.remove('is-visible');
+        }
+    });
+
+    // ボタンクリックでトップへスムーズにスクロール
+    backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });
