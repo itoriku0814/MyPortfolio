@@ -100,8 +100,10 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
     background-repeat: no-repeat;
     color: var(--white-color);
+    overflow: hidden; 
 }
 
+/* 変更点: ::beforeでオーバーレイをアニメーションさせる */
 #hero::before {
     content: '';
     position: absolute;
@@ -109,8 +111,9 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #000; /* 初期状態は真っ黒 */
     z-index: 1;
+    animation: fadeOverlay 2.5s ease-out forwards;
 }
 
 .hero-container {
@@ -122,6 +125,9 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: var(--white-color);
+    /* 変更点: animation-delayを調整 */
+    animation: fadeInUp 1s ease-out 1.5s forwards;
+    opacity: 0;
 }
 
 .hero-subtitle {
@@ -129,6 +135,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 700px;
     margin: 0 auto;
     color: var(--white-color);
+    /* 変更点: animation-delayを調整 */
+    animation: fadeInUp 1s ease-out 2s forwards;
+    opacity: 0;
 }
 
 /* 共通セクションタイトル */
@@ -228,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 20px 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* ボタン間の余白 */
+    gap: 10px; 
 }
 
 .work-link-btn {
@@ -331,7 +340,28 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
-/* スクロールアニメーション */
+/* アニメーション定義 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 変更点: 新しいキーフレームを追加 */
+@keyframes fadeOverlay {
+    from {
+        background-color: #000;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
